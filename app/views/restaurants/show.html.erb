@@ -1,2 +1,15 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<!-- <h1>Restaurants#show</h1>
+<p>Find me in app/views/restaurants/show.html.erb</p> -->
+
+<h1><%= @restaurants.name %></h1>
+
+<div>
+  <p>Address: <%= @restaurants.address %></p>
+  <p>Phone Number: <%= @restaurants.phone_number %></p>
+  <p>Description: <%= @restaurants.description %></p>
+  <p>Capacity: <%= @restaurants.capacity %></p>
+</div>
+
+
+<%= link_to "All Restaurants", restaurants_url %>
+<%= link_to "Edit Restaurant", edit_restaurant_url(@restaurants) %>
