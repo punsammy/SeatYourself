@@ -1,2 +1,15 @@
-<h1>Reservations#new</h1>
+<h1>Make a Reservation</h1>
 <p>Find me in app/views/reservations/new.html.erb</p>
+
+
+<%= form_tag reservations_new_path do  %>
+
+<%= label_tag :restaurant_id %>
+<%= select_tag :restaurant_id, options_for_select(@restaurant_list) %>
+
+<%= label_tag :time %>
+<%= datetime_select :reservation, :time %>
+
+<%= submit_tag "Make Reservation" %>
+
+<% end %>
