@@ -2,6 +2,7 @@ class ReservationsController < ApplicationController
 
   def show
     @reservation = Reservation.find(params[:id])
+    @restaurant = @reservation.restaurant
     # if @reservation.user == current_user
     #
     # else
