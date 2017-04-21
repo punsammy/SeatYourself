@@ -1,19 +1,20 @@
-<%= form_for(users_new_path) do |f|%>
+<%= form_for(users_path) do |f|%>
+
 
   <div class="field">
-    <%= f.label "Name:" %>
+    <%= f.label "Name:" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label "Email:" %>
+    <%= f.label "Email:" %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label "Password:" %>
+    <%= f.label "Password:" %><br>
     <%= f.text_field :password_digest %>
   </div>
   <div class="field">
-    <%= f.label "Postal Code:" %>
+    <%= f.label "Postal Code:" %><br>
     <%= f.text_field :postal_code %>
   </div>
   <div class="actions">

@@ -1,12 +1,4 @@
 class UsersController < ApplicationController
-  def index
-    @users = User.all
-  end
-
-  def show
-    @user = User.find (params[:id])
-  end
-
   def new
     @user = User.new
   end
@@ -14,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to products_url, notice: "Signed Up!"
+      redirect_to users_url, notice: "Signed Up!"
     else
       render "new"
     end
