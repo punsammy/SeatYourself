@@ -13,9 +13,10 @@
   <br>
   <%= reservation.label :time %>
   <%= reservation.datetime_select :time, discard_minute: true,
-                                         start_hour: 11,
-                                         end_hour: 19,
-                                         ampm: true %>
+                                         start_hour: @min_hour,
+                                         end_hour: @max_hour,
+                                         ampm: true,
+                                         default: @earliest %>
 
   <%= submit_tag "Make Reservation" %>
 
