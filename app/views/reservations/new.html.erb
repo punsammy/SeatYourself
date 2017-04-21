@@ -1,8 +1,17 @@
 <h1>Make a Reservation</h1>
 <p>Find me in app/views/reservations/new.html.erb</p>
 
+<% if flash[:alert] %>
+  <p><%= flash[:alert] %></p>
+  <p>You have the following errors:</p>
+  <ul class="errors">
+    <% @reservation.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
-<%= form_for reservations_path do |reservation| %>
+<%= form_for @reservation do |reservation| %>
 
   <%= reservation.label :restaurant_id %>
   <%= reservation.select :restaurant_id do  %>
@@ -10,9 +19,16 @@
       <%= content_tag(:option, name, value: id) %>
     <% end %>
   <% end %>
+
+  <%= reservation.label :party_size %>
+  <%= reservation.number_field :party_size %>
   <br>
   <%= reservation.label :time %>
-  <%= reservation.datetime_select :time %>
+  <%= reservation.datetime_select :time, discard_minute: true,
+                                         start_hour: @min_hour,
+                                         end_hour: @max_hour,
+                                         ampm: true,
+                                         default: @earliest %>
 
   <%= submit_tag "Make Reservation" %>
 
