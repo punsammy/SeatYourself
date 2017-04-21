@@ -33,6 +33,8 @@ class Reservation < ApplicationRecord
   def time_slot_available
     return unless restaurant
     return unless time
+    opening_time = restaurant.opening
+    closing_time = restaurant.closing
     if time < opening_time
       errors.add(:time, "is before opening time.")
     elsif time > (closing_time - 3600)
@@ -42,9 +44,9 @@ class Reservation < ApplicationRecord
       errors.add(:time, "must be on the hour.")
     else
       # Sanitize the time to remove seconds:
-      time = Time.mktime(time.year, time.month, time.day, time.hour)
-      if time - Time.now < (minutes_notice * 60)
-        errors.add(:time, "is too soon. Please provide at least #{minutes_notice} minutes notice")
+      rounded_time = Time.mktime(time.year, time.month, time.day, time.hour)
+      if rounded_time - Time.now < (restaurant.minutes_notice * 60)
+        errors.add(:time, "is too soon. Please provide at least #{restaurant.minutes_notice} minutes notice")
       end
     end
     return unless party_size
