@@ -1,5 +1,14 @@
-<%= form_for(users_path) do |f|%>
-
+<%= form_for(@user) do |f|%>
+<% if @user.errors.any? %>
+  <div class="error_messages">
+    <h2>Form is Invalid</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
   <div class="field">
     <%= f.label "Name:" %><br>
@@ -11,7 +20,7 @@
   </div>
   <div class="field">
     <%= f.label "Password:" %><br>
-    <%= f.text_field :password_digest %>
+    <%= f.password_field :password_digest %>
   </div>
   <div class="field">
     <%= f.label "Postal Code:" %><br>
