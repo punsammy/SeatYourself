@@ -17,13 +17,17 @@ class Restaurant < ApplicationRecord
     Time.mktime(t.year, t.month, t.day, 20) # default closing at 8pm
   end
 
-  # def opening(t = Time.now)
-  #   Time.mktime(t.year, t.month, t.day, 11) # default opening at 11am
-  # end
-  #
-  # def closing(t = Time.now)
-  #   Time.mktime(t.year, t.month, t.day, 20) # default closing at 8pm
-  # end
+  def minutes_notice
+    # Provide a customizable minimum notice
+    30 # 30 minutes notice required
+  end
+  def opening(t = Time.now)
+    Time.mktime(t.year, t.month, t.day, 11) # default opening at 11am
+  end
+
+  def closing(t = Time.now)
+    Time.mktime(t.year, t.month, t.day, 20) # default closing at 8pm
+  end
 
   def self.auto_generate
     r = create(name: "Fake-#{@@counter}", address: "#{rand(1000)} Fake St.",
