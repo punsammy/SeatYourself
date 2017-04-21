@@ -10,13 +10,7 @@ Rails.application.routes.draw do
 
   get 'users/edit'
 
-  get 'reservations/index'
-
-  get 'reservations/show'
-
-  get 'reservations/new'
-
-  get 'reservations/edit'
+  resources :reservations
 
   resources :restaurants
 
