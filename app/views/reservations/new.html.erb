@@ -2,14 +2,18 @@
 <p>Find me in app/views/reservations/new.html.erb</p>
 
 
-<%= form_tag reservations_new_path do  %>
+<%= form_for reservations_path do |reservation| %>
 
-<%= label_tag :restaurant_id %>
-<%= select_tag :restaurant_id, options_for_select(@restaurant_list) %>
+  <%= reservation.label :restaurant_id %>
+  <%= reservation.select :restaurant_id do  %>
+    <% @restaurant_list.each do |name, id| -%>
+      <%= content_tag(:option, name, value: id) %>
+    <% end %>
+  <% end %>
+  <br>
+  <%= reservation.label :time %>
+  <%= reservation.datetime_select :time %>
 
-<%= label_tag :time %>
-<%= datetime_select :reservation, :time %>
-
-<%= submit_tag "Make Reservation" %>
+  <%= submit_tag "Make Reservation" %>
 
 <% end %>

@@ -14,12 +14,16 @@ class ReservationsController < ApplicationController
     @restaurant_list = Restaurant.all.map do |restaurant|
       [restaurant.name, restaurant.id]
     end
-    @today = Time.now
+    @earliest = Reservation.next_possible_time
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
     # @reservation.user = current_user
+  end
+
+  def create_at_restaurant
+    # for reservation links from restaurant page...
   end
 
 private
