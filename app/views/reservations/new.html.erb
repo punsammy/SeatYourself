@@ -12,7 +12,10 @@
   <% end %>
   <br>
   <%= reservation.label :time %>
-  <%= reservation.datetime_select :time %>
+  <%= reservation.datetime_select :time, discard_minute: true,
+                                         start_hour: 11,
+                                         end_hour: 19,
+                                         ampm: true %>
 
   <%= submit_tag "Make Reservation" %>
 
