@@ -1,13 +1,22 @@
-<h1>SeatYourself</h1>
+<h1><div class="mainheader"> BiteMaker </div></h1>
+
+<% #postal code form %>
 
 <h2>Weekly Specials</h2>
 
-<h1>Restaurants</h1>
+<% @restaurants.each do |restaurant| %>
+  <h3><p><%= restaurant.name %></p></h3>
+  <p>This Week's Special: <%= restaurant.special %></p>
+  <%= link_to 'View Restaurant', restaurant_path(restaurant) %>
+<% end %>
 
-<Label>Postal Code</Label><input type="text" title="Postal code"/>
+<h2>All Restaurants</h2>
 
 <% @restaurants.each do |restaurant| %>
-  <p><%= restaurant.name %>, <%= restaurant.phone_number %></p>
-  <img src="<%= picture.url %>">
-  <%= link_to "/restaurants/#{restaurant.id}" %>
+  <h3><%= restaurant.name %>, <%= restaurant.address  %></h3>
+  <p><%= restaurant.description %></p>
+  <p>Phone: <%= restaurant.phone_number %></p>
+  <%= link_to 'View Restaurant', restaurant_path(restaurant) %>
 <% end %>
+
+<h2><p><%= link_to "Add A New Restaurant", new_restaurant_url(@restaurant) %></p></h3>
