@@ -11,10 +11,17 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    # These should eventually be instance methods
+    @min_hour = Restaurant.opening.hour
+    @max_hour = Restaurant.closing.hour - 1
+    # min_notice = 30 * 60 # 30 minutes
+    @earliest = Reservation.next_possible_time
+
     @restaurant_list = Restaurant.all.map do |restaurant|
       [restaurant.name, restaurant.id]
     end
-    @earliest = Reservation.next_possible_time
+
+    
   end
 
   def create
