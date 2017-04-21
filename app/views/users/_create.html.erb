@@ -1,19 +1,32 @@
-<%= form_for(users_new_path) do |f|%>
+<h1>Welcome to Bitemaker!</h1>
+<h2>Please create your Profile.</h2>
+
+<%= form_for(@user) do |f|%>
+<% if @user.errors.any? %>
+  <div class="error_messages">
+    <h2>Form is Invalid</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
   <div class="field">
-    <%= f.label "Name:" %>
+    <%= f.label "Name:" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label "Email:" %>
+    <%= f.label "Email:" %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label "Password:" %>
-    <%= f.text_field :password_digest %>
+    <%= f.label "Password:" %><br>
+    <%= f.password_field :password_digest %>
   </div>
   <div class="field">
-    <%= f.label "Postal Code:" %>
+    <%= f.label "Postal Code:" %><br>
     <%= f.text_field :postal_code %>
   </div>
   <div class="actions">
