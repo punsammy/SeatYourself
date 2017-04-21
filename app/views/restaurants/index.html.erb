@@ -10,6 +10,7 @@
      <div class="all-restaurants">
        <h2><%= restaurant.name %></h1>
        <p><%= restaurant.address %></p>
+       <p><%= (restaurant.opening_time).to_s(:time) %> to <%= (restaurant.closing_time).to_s(:time) %></p>
        <p><%= restaurant.description %></p>
      </div>
    </a>

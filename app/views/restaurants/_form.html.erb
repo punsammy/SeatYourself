@@ -16,8 +16,12 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :hours_of_operation %><br />
-    <%= f.text_field :hours_of_operation %>
+    <%= f.label :opening_time %><br />
+    <%= f.time_select :opening_time %>
+  </div>
+  <div class="field">
+    <%= f.label :closing_time %><br />
+    <%= f.time_select :closing_time %>
   </div>
   <div class="field">
     <%= f.label :phone_number %><br />

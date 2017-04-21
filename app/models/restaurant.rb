@@ -21,6 +21,7 @@ class Restaurant < ApplicationRecord
     # Provide a customizable minimum notice
     30 # 30 minutes notice required
   end
+
   def opening(t = Time.now)
     Time.mktime(t.year, t.month, t.day, 11) # default opening at 11am
   end
