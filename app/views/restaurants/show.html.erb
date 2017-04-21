@@ -5,7 +5,7 @@
 
 <div>
   <p>Address: <%= @restaurants.address %></p>
-  <p>Hours Of Operation: <%= @restaurants.opening_time.to_s %> to <%=@restaurants.closing_time.to_s %></p>
+  <p>Hours Of Operation: <%= @restaurants.opening_time.to_s(:time) %> to <%=@restaurants.closing_time.to_s(:time) %></p>
   <p>Phone Number: <%= @restaurants.phone_number %></p>
   <p>Description: <%= @restaurants.description %></p>
   <p>Capacity: <%= @restaurants.capacity %></p>
