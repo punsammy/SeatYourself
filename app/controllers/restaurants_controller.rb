@@ -11,11 +11,15 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.find(params[:id])
   end
 
+  def show
+    @restaurants = Restaurant.find(params[:id])
+  end
+
   def create
-    @restaurants = Restaurant.new(Restaurant_params)
+    @restaurants = Restaurant.new(restaurant_params)
 
     if @restaurants.save
-      redirect_to Restaurants_url
+      redirect_to restaurants_url
     else
       render :new
     end
@@ -25,7 +29,7 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.find(params[:id])
 
     if @restaurants.update_attributes(Restaurant_params)
-      redirect_to Restaurant_url(@restaurants)
+      redirect_to restaurant_url(@restaurants)
     else
       render :edit
     end
@@ -34,11 +38,11 @@ class RestaurantsController < ApplicationController
   def destroy
     @restaurants = Restaurant.find(params[:id])
     @restaurants.destroy
-    redirect_to Restaurants_url
+    redirect_to restaurants_url
   end
 
   private
-  def Restaurant_params
-    params.require(:Restaurant).permit(:name, :address, :phone_number, :description, :capacity)
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :address, :phone_number, :description, :capacity)
   end
 end

@@ -1,0 +1,13 @@
+<h1>SeatYourself</h1>
+
+<h2>Weekly Specials</h2>
+
+<h1>Restaurants</h1>
+
+<Label>Postal Code</Label><input type="text" title="Postal code"/>
+
+<% @restaurants.each do |restaurant| %>
+  <p><%= restaurant.name %>, <%= restaurant.phone_number %></p>
+  <img src="<%= picture.url %>">
+  <%= link_to "/restaurants/#{restaurant.id}" %>
+<% end %>
