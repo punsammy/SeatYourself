@@ -1,6 +1,7 @@
 class Reservation < ApplicationRecord
   belongs_to :user
   belongs_to :restaurant
+  has_many :reservations, through: :restaurant
 
   # Replace these later with Restaurant#min_hour etc.
   def self.next_possible_time
