@@ -1,5 +1,17 @@
 class ReservationsController < ApplicationController
 
+  def index
+    @restaurant = Restaurant.find(params[:id])
+    if @restaurant
+      unless @restaurant.user_id == 1 #current_user
+        # Only the owner can view the current reservations.
+        redirect_to restaurant_path(@restaurant)
+      end
+    else
+
+    end
+  end
+
   def show
     @reservation = Reservation.find(params[:id])
     @restaurant = @reservation.restaurant
