@@ -3,11 +3,13 @@ class ReservationsController < ApplicationController
   def show
     @reservation = Reservation.find(params[:id])
     @restaurant = @reservation.restaurant
-    # if @reservation.user == current_user
-    #
-    # else
-    #
-    # end
+    if @reservation.user == current_user
+      # Only the user who made the reservation can view it.
+      render :show
+    else
+      # redirect_to either restaurants or users homepage.
+      redirect_to restaurants_path
+    end
   end
 
   def new
@@ -31,6 +33,18 @@ class ReservationsController < ApplicationController
 
   def create_at_restaurant
     # for reservation links from restaurant page...
+  end
+
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @restaurant = @reservation.restaurant
+    if @reservation.user == current_user
+      @reservation.destroy
+      flash[:notice] = "Your reservation has been cancelled."
+    else
+      # redirect_to either restaurants or users homepage.
+      redirect_to restaurants_path
+    end
   end
 
 private

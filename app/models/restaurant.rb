@@ -33,6 +33,11 @@ class Restaurant < ApplicationRecord
     Time.mktime(t.year, t.month, t.day, 20) # default closing at 8pm
   end
 
+  def reservation_length
+    # This will let us change the default reservation length later.
+    3600 # 1 hour reservation
+  end
+
   def minutes_notice
     # Provide a customizable minimum notice
     # Later, this can be moved to the database
