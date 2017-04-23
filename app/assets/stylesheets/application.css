@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+ *,
+ *::before,
+ *::after, {
+   box-sizing: border-box;
+ }
+
+
+ header{
+     position: fixed;
+     display: inline;
+     width: 96%;
+     height: 10%;
+     border-style: groove;
+ }
+
+ .logo {
+     width: 15%;
+     float: left;
+     border-right-style: solid;
+     margin-left: 10px;
+ }
+ .home_link {
+     width: 15%;
+     float: left;
+     border-right-style: solid;
+     margin-left: 10px;*/
+ }
+
+ .create {
+    width: 70%;
+    display: inline-block;
+    border-style: outset;
+    float: left;
+    position: relative;
+    right: auto;
+    left: 15%;
+    margin-top: 15%;
+ }
+
+ .sign_in{
+   width: 70%;
+   display: inline-block;
+   border-style: outset;
+   float: left;
+   position: relative;
+   right: auto;
+   left: 15%;
+   margin-top: 15%;
+ }
