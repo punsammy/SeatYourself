@@ -21,18 +21,6 @@ class Restaurant < ApplicationRecord
     Time.mktime(t.year, t.month, t.day, 20) # default closing at 8pm
   end
 
-  def self.opening(t = Time.now)
-    # DEPRECIATED!
-    # Delete this method when there are no other dependencies
-    Time.mktime(t.year, t.month, t.day, 11) # default opening at 11am
-  end
-
-  def self.closing(t = Time.now)
-    # DEPRECIATED!
-    # Delete this method when there are no other dependencies
-    Time.mktime(t.year, t.month, t.day, 20) # default closing at 8pm
-  end
-
   def reservation_length
     # This will let us change the default reservation length later.
     3600 # 1 hour reservation
@@ -42,18 +30,6 @@ class Restaurant < ApplicationRecord
     # Provide a customizable minimum notice
     # Later, this can be moved to the database
     30 # 30 minutes notice required
-  end
-
-  def opening(t = Time.now)
-    # DEPRECIATED!
-    # Delete this method when there are no other dependencies
-    Time.mktime(t.year, t.month, t.day, 11) # default opening at 11am
-  end
-
-  def closing(t = Time.now)
-    # DEPRECIATED!
-    # Delete this method when there are no other dependencies
-    Time.mktime(t.year, t.month, t.day, 20) # default closing at 8pm
   end
 
   def self.auto_generate

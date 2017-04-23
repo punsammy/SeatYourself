@@ -54,8 +54,8 @@ private
   end
 
   def set_form_vars
-    @min_hour = Restaurant.opening.hour
-    @max_hour = Restaurant.closing.hour - 1
+    @min_hour = Restaurant.default_opening_time.getlocal.hour
+    @max_hour = Restaurant.default_closing_time.getlocal.hour - 1
     # min_notice = 30 * 60 # 30 minutes
     @earliest = Reservation.next_possible_time
 
