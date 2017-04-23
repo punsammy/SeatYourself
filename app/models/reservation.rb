@@ -9,9 +9,12 @@ class Reservation < ApplicationRecord
   scope :overlap, ->(time) { where(time: time) }
 
   def self.next_possible_time
+    # Returns the next available reservation time based on the current time.
+    # Use this method to pre-populate the form.
     t = Time.now
-    min_hour = Restaurant.opening.hour
-    max_hour = Restaurant.closing.hour
+    # Without a restaurant already selected, set the default hours
+    min_hour = Restaurant.default_opening_time.hour
+    max_hour = Restaurant.default_closing_time.hour
     if t.hour < min_hour
       # next possible reservation at opening time
       Time.mktime(t.year, t.month, t.day, min_hour)
@@ -33,8 +36,9 @@ class Reservation < ApplicationRecord
   def time_slot_available
     return unless restaurant
     return unless time
-    opening_time = restaurant.opening
-    closing_time = restaurant.closing
+    # We have to assume the opening and closing times exist!
+    # opening_time = restaurant.opening
+    # closing_time = restaurant.closing
     if time < opening_time
       errors.add(:time, "is before opening time.")
     elsif time > (closing_time - 3600)
