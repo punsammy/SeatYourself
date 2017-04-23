@@ -1,5 +1,15 @@
 # Seat Yourself
 
+## To do
+
+- Make restaurant controller methods for edit, update, destroy check the current user before executing.
+
+```ruby
+@restaurant.owner == current_user
+```
+
+
+
 ## Suggestions
 
 ### Proximity search
