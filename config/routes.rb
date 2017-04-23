@@ -1,13 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
   get '/' => 'home#index'
-
   resources :users
   resources :reservations
   resources :restaurants

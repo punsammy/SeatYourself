@@ -1,13 +1,13 @@
 <div class="sign_in">
   <h1>Please Sign In!</h1>
-<%= form_tag sessions_new_path do %>
+<%= form_tag sessions_path do %>
   <div class="field">
     <%= label_tag :email %><br/>
     <%= text_field_tag :email, params[:email] %>
   </div>
   <div class="field">
-    <%= label_tag :password %><br/>
-    <%= password_field_tag :password %>
+    <%= label_tag "Password Yo" %><br/>
+    <%= password_field_tag :password_digest %>
   </div>
   <div class="actions"><%= submit_tag "Log in" %>
   </div>

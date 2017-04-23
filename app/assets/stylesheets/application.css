@@ -18,27 +18,71 @@
  *::after, {
    box-sizing: border-box;
  }
-
+.create,h1,h2 {
+  margin: 0%;
+}
+body{
+  margin: 0px;
+  font-family: 'Palanquin Dark', sans-serif;
+  font-size: 1em;
+  background-color: #fcf3e3;
+}
 
  header{
      position: fixed;
      display: inline;
-     width: 96%;
-     height: 10%;
-     border-style: groove;
+     width: 100%;
+     border-bottom-style: outset;
+     height: auto;
+ }
+
+ footer{
+   position: fixed;
+   display: inline;
+   color: wheat;
+   width: 100%;
+   height: 10%;
+   bottom: 0;
+   border-top-style: inset;
+   background-color: black;
+   text-align: center;
  }
 
  .logo {
      width: 15%;
      float: left;
-     border-right-style: solid;
+     border-right-style: outset;
      margin-left: 10px;
+     padding-left: 3%;
+     padding-right: 3%;
  }
+
  .home_link {
      width: 15%;
      float: left;
-     border-right-style: solid;
-     margin-left: 10px;*/
+     border-right-style: outset;
+     margin-left: 10px;
+     padding-left: 3%;
+     padding-right: 3%;
+ }
+
+ .userinfo{
+   width: 35%;
+   float: left;
+   margin-left: 10px;
+   padding-left: 3%;
+   padding-right: 3%;
+ }
+
+ .homepage{
+   width: 70%;
+   display: inline-block;
+   border-style: outset;
+   float: left;
+   position: relative;
+   right: auto;
+   left: 15%;
+   margin-top: 7%;
  }
 
  .create {
@@ -49,7 +93,7 @@
     position: relative;
     right: auto;
     left: 15%;
-    margin-top: 15%;
+    margin-top: 7%;
  }
 
  .sign_in{
