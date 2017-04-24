@@ -4,6 +4,6 @@
 # Examples:
 #
 
-restaurant1 = Restaurant.new(name: "Quelque Chose", address: "58 Bon St.", phone_number: 416-555-1234, description: "Fine French Dining", capacity: 40, special: "La Salade Gourmet")
+restaurant1 = Restaurant.new(name: "Quelque Chose", address: "58 Bon St.", phone_number: 416-555-1234, description: "Fine French Dining", capacity: 40, special: "La Salade Gourmet", opening_time: , closing_time: )
 
-restaurant2 = Restaurant.new(name: "Jolly Jiggs Pizzeria", "10 Paisano St.", phone_number: 416-555-9671, description: "Supreme pies!", capacity: 10, special: "Jalapeno Kaboom")
+restaurant2 = Restaurant.new(name: "Jolly Jiggs Pizzeria", "10 Paisano St.", phone_number: 416-555-9671, description: "Supreme pies!", capacity: 10, special: "Jalapeno Kaboom", opening_time: , closing_time: )
