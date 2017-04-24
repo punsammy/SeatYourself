@@ -13,11 +13,11 @@
  *= require_tree .
  *= require_self
  */
- *,
+ /**,
  *::before,
  *::after, {
    box-sizing: border-box;
- }
+ }*/
 .create,h1,h2 {
   margin: 0%;
 }
@@ -94,6 +94,8 @@ body{
     right: auto;
     left: 15%;
     margin-top: 7%;
+    text-align: center;
+    font-size: 0.8em;
  }
 
  .sign_in{
@@ -105,4 +107,9 @@ body{
    right: auto;
    left: 15%;
    margin-top: 15%;
+   text-align: center;
+ }
+
+ .error_messages{
+   color: #af0e0e;
  }
