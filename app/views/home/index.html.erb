@@ -10,7 +10,7 @@
   <%= link_to 'View Restaurant', restaurant_path(restaurant) %>
 <% end %>
 
-<h2>All Restaurants</h2>
+<h2><%= link_to "All Restaurants", restaurants_path%></h2>
 
 <% @restaurants.each do |restaurant| %>
   <h3><%= restaurant.name %>, <%= restaurant.address  %></h3>
