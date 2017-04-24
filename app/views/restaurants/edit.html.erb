@@ -1,11 +1,13 @@
 <!-- <h1>Restaurants#edit</h1>
 <p>Find me in app/views/restaurants/edit.html.erb</p> -->
 
-<h1>Edit Restaurant</h1>
+<div class="homepage">
+  <h1>Edit Restaurant</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to "Delete Restaurant", @restaurants, method: :delete %>
-<%= link_to "All Restaurants", restaurants_url %>
-<%= link_to "Back to Restaurant", restaurant_url(@restaurants) %>
-<%= link_to "Home Page", root_url %>
+  <%= link_to "Delete Restaurant", @restaurants, method: :delete %>
+  <%= link_to "All Restaurants", restaurants_url %>
+  <%= link_to "Back to Restaurant", restaurant_url(@restaurants) %>
+  <%= link_to "Home Page", root_url %>
+</div>

@@ -31,7 +31,7 @@ body{
 
  header{
      position: fixed;
-     display: inline;
+    /*display: inline;*/
      width: 100%;
      border-bottom-style: outset;
      height: auto;
@@ -134,4 +134,17 @@ body{
 
  .error_messages{
    color: #af0e0e;
+ }
+
+
+ .all-restaurants{
+   font-family: 'Paytone One', sans-serif;
+   width: 70%;
+   display: inline-block;
+   border-style: outset;
+   float: left;
+   position: relative;
+   right: auto;
+   left: 15%;
+   margin-top: 7%;
  }

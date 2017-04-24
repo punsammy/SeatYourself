@@ -10,8 +10,8 @@
     <tr>
       <th>Restaurant:</th><th>Time</th><th>Party size</th><th></th>
     </tr>
-      <td><%= reservation.restaurant %></td>
-      <td><%= reservation.time %></td>
+      <td><%= reservation.restaurant.name %></td>
+      <td><%= reservation.local_time %></td>
       <td><%= reservation.party_size %></td>
       <td><%= link_to "Cancel Reservation", reservation, method: :delete %></td>
     </tr>
