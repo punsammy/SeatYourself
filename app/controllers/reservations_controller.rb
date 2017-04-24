@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
 
   def index
+    aslfkjh
     @user = current_user
     if @user
       render :index# Only the user who made the reservation can view it.
