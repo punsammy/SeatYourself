@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 <head>
   <title>Seatyourself</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -11,15 +12,40 @@
   <link rel="stylesheet" href="/layouts/views.css">
 >>>>>>> 1b95f081769c93c773c54e8570e2e6a60e2dd8c7
 </head>
-<body>
-  <% if flash[:notice] %>
-    <p id="notice"><%= flash[:notice] %></p>
-  <% end %>
-  <% if flash[:alert] %>
-    <p id="alert"><%= flash[:alert] %></p>
-  <% end %>
-  
-<%= yield %>
+=======
+  <head>
+    <title>Seatyourself</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark" rel="stylesheet">
+  </head>
 
+  <header>
+    <div class="logo">
+      "LOGO"
+    </div>
+    <div class="home_link">
+      <a href="/">HOME</a>
+    </div>
+    <div class="userinfo">
+        <% if current_user %>
+          Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+        <% else %>  <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
+        <% end %>
+    </div>
+  </header>
+  <footer>
+    © Bitemaker 2017
+  </footer>
+
+>>>>>>> user
+<body>
+
+
+  <%= yield %>
 </body>
+
+
+
 </html>

@@ -1,13 +1,26 @@
-<h1>Please Sign In!</h1>
+<div class="sign_in">
+  <h1>Please Sign In!</h1>
+      <% if flash[:notice] %>
+        <p id="notice"><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:alert] %>
+        <p id="alert"><%= flash[:alert] %></p>
+      <% end %>
 
-<%= form_tag sessions_new_path do %>
+  <%= form_tag sessions_path do %>
+
   <div class="field">
     <%= label_tag :email %><br/>
     <%= text_field_tag :email, params[:email] %>
   </div>
+
   <div class="field">
     <%= label_tag :password %><br/>
-    <%= password_field_tag :password %>
+    <%= password_field_tag :password_digest %>
   </div>
-  <div class="actions"><%= submit_tag "Log in" %></div>
+
+  <div class="actions">
+    <%= submit_tag "Log in" %>
+  </div>
+</div>
 <% end %>

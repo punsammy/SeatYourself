@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   root 'home#index'
 
 
+=======
+  get '/' => 'home#index'
+>>>>>>> user
   resources :users
   resources :reservations
   resources :restaurants
