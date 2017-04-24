@@ -54,6 +54,11 @@ ActiveRecord::Schema.define(version: 20170421205540) do
 >>>>>>> user
   end
 
+  create_table "restaurants_categories", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "restaurant_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "name"
