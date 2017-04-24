@@ -26,6 +26,7 @@ body{
   font-family: 'Palanquin Dark', sans-serif;
   font-size: 1em;
   background-color: #fcf3e3;
+  width: 100%;
 }
 
  header{
@@ -37,8 +38,8 @@ body{
  }
 
  footer{
-   position: fixed;
-   display: inline;
+   position: absolute;
+   display: inline-block;
    color: wheat;
    width: 100%;
    height: 10%;
@@ -46,6 +47,7 @@ body{
    border-top-style: inset;
    background-color: black;
    text-align: center;
+   left: 0%;
  }
 
  .logo {

@@ -44,14 +44,6 @@ ActiveRecord::Schema.define(version: 20170421205540) do
     t.datetime "opening_time"
     t.datetime "closing_time"
     t.string   "special"
-<<<<<<< HEAD
-=======
-  end
-
-  create_table "restaurants_categories", force: :cascade do |t|
-    t.integer "category_id"
-    t.integer "restaurant_id"
->>>>>>> user
   end
 
   create_table "restaurants_categories", force: :cascade do |t|

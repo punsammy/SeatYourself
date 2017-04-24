@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark" rel="stylesheet">
   </head>
 
+  <body>
   <header>
     <div class="logo">
     </div>
@@ -28,11 +29,6 @@
     </div>
   </header>
 
-  <footer>
-    © Bitemaker 2017
-  </footer>
-
-<body>
   <% if flash[:notice] %>
     <p id="notice"><%= flash[:notice] %></p>
   <% end %>
@@ -42,6 +38,10 @@
 
 
   <%= yield %>
+
+  <footer>
+    © Bitemaker 2017
+  </footer>
 </body>
 
 
