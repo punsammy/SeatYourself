@@ -11,6 +11,32 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def edit
+    @reservation = Reservation.find(params[:id])
+    if current_user == @reservation.user
+      # These should eventually be instance methods
+      set_form_vars
+    else
+      flash[:alert] = "Pleas log in or sign up first."
+      redirect_to restaurants_path
+    end
+  end
+
+  def update
+    @reservation = Reservation.find(params[:id])
+    if current_user == @reservation.user
+      if @picture.update_attributes(reservation_params)
+        redirect_to reservation_path(@reservation)
+      else
+        set_form_vars
+        render :edit
+      end
+    else
+      flash[:alert] = "Pleas log in or sign up first."
+      redirect_to restaurants_path
+    end
+  end
+
   def restaurant_index
     @restaurant = Restaurant.find(params[:id])
     if @restaurant
