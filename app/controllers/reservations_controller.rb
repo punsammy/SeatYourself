@@ -1,9 +1,9 @@
 class ReservationsController < ApplicationController
 
   def index
-    @user = User.find(params[:id])
-    if @user == current_user
-      # Only the user who made the reservation can view it.
+    @user = current_user
+    if @user
+      render :index# Only the user who made the reservation can view it.
     else
       # redirect_to either restaurants or users homepage.
       flash.now[:alert] = "Please Log in!"
