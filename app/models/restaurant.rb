@@ -36,7 +36,7 @@ class Restaurant < ApplicationRecord
     # Use this method to create a restaurant object with all the fields filled in.
     r = create(name: "Fake-#{@@counter}", address: "#{rand(1000)} Fake St.",
                description: "This is a fake restaurant!", capacity: rand(100), user_id: 0,
-               phone_number: "(#{rand(1000)})-#{rand(1000)}-#{rand(10000)}", opening_time: default_opening_time,
+               phone_number: "(416)-555-#{rand(1000..10000)}", opening_time: default_opening_time,
                closing_time: default_closing_time, special: "")
     @@counter += 1
   end
