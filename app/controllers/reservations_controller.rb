@@ -25,7 +25,7 @@ class ReservationsController < ApplicationController
   def update
     @reservation = Reservation.find(params[:id])
     if current_user == @reservation.user
-      if @picture.update_attributes(reservation_params)
+      if @reservation.update_attributes(reservation_params)
         redirect_to reservation_path(@reservation)
       else
         set_form_vars
