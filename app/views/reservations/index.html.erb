@@ -6,7 +6,7 @@
   <p> You have no reservations.</p>
 <% else %>
 
-  <table>
+  <table class="homepage">
     <% @user.reservations.order(:time).each do |reservation| %>
     <tr>
       <th>Restaurant:</th><th>Time</th><th>Party size</th><th></th><th></th>

@@ -1,6 +1,6 @@
 <h1>Make a Reservation</h1>
 <!-- <p>Find me in app/views/reservations/new.html.erb</p> -->
-
+<div class="homepage">
 <% if @reservation.errors.any? %>
   <p>I'm sorry. We can't make your reservation because:</p>
   <ul class="errors">
@@ -32,3 +32,4 @@
   <%= submit_tag "Make Reservation" %>
 
 <% end %>
+</div>
