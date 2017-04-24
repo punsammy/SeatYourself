@@ -1,0 +1,21 @@
+<h1>Reservations#index</h1>
+<p>Find me in app/views/reservations/index.html.erb</p>
+
+<% if @restaurant.reservations.size == 0 %>
+  <p>There are no reservations for this restaurant.</p>
+<% else %>
+
+  <table>
+    <% @restaurant.reservations.order(:time).each do |reservation| %>
+    <tr>
+      <th>Booked by:</th><th>email</th><th>Time</th><th>Party size</th>
+    </tr>
+      <td><%= reservation.user.name %></td>
+      <td><%= reservation.user.email %></td>
+      <td><%= reservation.time %></td>
+      <td><%= reservation.party_size %></td>
+    </tr>
+    <% end %>
+  </table>
+
+<% end %>

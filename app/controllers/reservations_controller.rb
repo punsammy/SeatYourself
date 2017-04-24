@@ -56,7 +56,7 @@ class ReservationsController < ApplicationController
         flash[:notice] = "Thank you for making a reservation!"
         redirect_to reservation_path(@reservation)
       else
-        flash.now[:alert] = "Sorry, we cannot make that reservation."
+        # flash.now[:alert] = "Sorry, we cannot make that reservation."
         set_form_vars
         render :new
       end
