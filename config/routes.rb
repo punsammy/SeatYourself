@@ -1,18 +1,13 @@
 Rails.application.routes.draw do
 
-  get '/' => 'home#index'
+  root 'home#index'
 
-  get 'users/index'
+  get "/restaurants/:id/reservations", to: "reservations#index", as: :restaurant_reservations
 
-  get 'users/show'
-
-  get 'users/new'
-
-  get 'users/edit'
-
-  resources :reservations
-
+  resources :users
+  resources :reservations, only: %i(new show create destroy)
   resources :restaurants
+  resources :sessions, only: [:new, :create, :destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

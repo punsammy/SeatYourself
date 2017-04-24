@@ -1,5 +1,42 @@
 # Seat Yourself
 
+## To do
+
+- Make restaurant controller methods for edit, update, destroy check the current user before executing.
+
+```ruby
+@restaurant.owner == current_user
+```
+
+
+
+## Suggestions
+
+### Proximity search
+
+I think we already talked about this, but I thought it would help to write it down.
+
+One way we could filter restaurants by area is by creating a table called locations with this structure:
+
+```ruby
+create_table :landmarks do |t|
+  t.string :name
+end
+
+create_table :distances do |t|
+  t.integer :landmark_id
+  t.integer :restuarant_id
+  t.integer :radius
+end
+```
+
+For a given landmark and restaurant, the distances table has an entry with
+the distance between them, rounded to the nearest km.
+
+This will make it easier for people to select a location from a list and
+filter by the maximum distance.
+
+
 ## Mockup
 
 ### Main Page
