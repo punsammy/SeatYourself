@@ -6,11 +6,6 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-<<<<<<< HEAD
-  <link rel="stylesheet" href="/views/layouts/views.css">
-=======
-  <link rel="stylesheet" href="/layouts/views.css">
->>>>>>> 1b95f081769c93c773c54e8570e2e6a60e2dd8c7
 </head>
 =======
   <head>
@@ -41,6 +36,17 @@
 
 >>>>>>> user
 <body>
+<<<<<<< HEAD
+=======
+  <% if flash[:notice] %>
+    <p id="notice"><%= flash[:notice] %></p>
+  <% end %>
+  <% if flash[:alert] %>
+    <p id="alert"><%= flash[:alert] %></p>
+  <% end %>
+
+<%= yield %>
+>>>>>>> 2d0ca8cbfe3ea93f2af4c1cb1f3c02fa1ce75f68
 
 
   <%= yield %>
