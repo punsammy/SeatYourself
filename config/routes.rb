@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   root 'home#index'
 
   get "/restaurants/:id/reservations", to: "reservations#index", as: :restaurant_reservations
 
+=======
+  get '/' => 'home#index'
+>>>>>>> user
   resources :users
   resources :reservations, only: %i(new show create destroy)
   resources :restaurants

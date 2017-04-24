@@ -1,22 +1,10 @@
-<header>
-  <div class="logo">
-    "LOGO"
-  </div>
-  <div class="home_link">
-    <%= link_to 'Home', users_path %>
-  </div>
-</header>
-
-
-<h1>Welcome!</h1>
-<div class="">
+<div class="sign_in">
+  <h1>Welcome!</h1>
   <form action="/users/new.html">
     <input type="submit" value="Create Account">
   </form>
-</div>
 
 <!--  no post requests made to allow for save to take place-->
-<div class="">
   <form action="/sessions/new.html">
     <input type="submit" value="Sign In">
   </form>
