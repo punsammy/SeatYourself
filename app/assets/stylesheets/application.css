@@ -36,7 +36,7 @@ body{
      border-bottom-style: outset;
      height: auto;
      z-index: 1;
-     background-color: red; 
+     background-color: red;
  }
 
  footer{
@@ -117,3 +117,20 @@ body{
  .error_messages{
    color: #af0e0e;
  }
+
+
+ .all-restaurants{
+   font-family: 'Paytone One', sans-serif;
+   width: 70%;
+   display: inline-block;
+   border-style: outset;
+   float: left;
+   position: relative;
+   right: auto;
+   left: 15%;
+   margin-top: 7%;
+ }
+
+.all_restaurants_title {
+  
+}
