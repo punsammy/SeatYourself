@@ -16,10 +16,10 @@
 
   <body>
   <header>
-    <div class="logo">
-    </div>
     <div class="home_link">
-      <a href="/">HOME</a>
+      <a href="/">
+        <span id="logo"><%= image_tag "fwL3f46.png" %></span>
+      </a>
     </div>
     <div class="userinfo">
         <% if current_user %>
@@ -27,15 +27,16 @@
         <% else %>  <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
         <% end %>
     </div>
-  </header>
+</header>
 
-  <% if flash[:notice] %>
+  <div class="notice">
+    <% if flash[:notice] %>
     <p id="notice"><%= flash[:notice] %></p>
-  <% end %>
-  <% if flash[:alert] %>
+    <% end %>
+    <% if flash[:alert] %>
     <p id="alert"><%= flash[:alert] %></p>
-  <% end %>
-
+    <% end %>
+  </div>
 
   <%= yield %>
 
