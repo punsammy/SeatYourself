@@ -1,9 +1,20 @@
 class ReservationsController < ApplicationController
 
   def index
+    @user = User.find(params[:id])
+    if @user == current_user
+      # Only the user who made the reservation can view it.
+    else
+      # redirect_to either restaurants or users homepage.
+      flash.now[:alert] = "Please Log in!"
+      redicrect_to restaurants_path
+    end
+  end
+
+  def restaurant_index
     @restaurant = Restaurant.find(params[:id])
     if @restaurant
-      unless @restaurant.user_id == 1 #current_user
+      unless @restaurant.user_id == current_user
         # Only the owner can view the current reservations.
         redirect_to restaurant_path(@restaurant)
       end
@@ -15,7 +26,7 @@ class ReservationsController < ApplicationController
   def show
     @reservation = Reservation.find(params[:id])
     @restaurant = @reservation.restaurant
-    if @reservation.user == nil #current_user
+    if @reservation.user == current_user
       # Only the user who made the reservation can view it.
       render :show
     else
@@ -51,7 +62,7 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     @restaurant = @reservation.restaurant
-    if @reservation.user == nil #current_user
+    if @reservation.user == current_user
       @reservation.destroy
       flash[:notice] = "Your reservation has been cancelled."
       redirect_to restaurants_path
