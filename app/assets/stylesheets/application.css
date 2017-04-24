@@ -14,7 +14,6 @@
  *= require_self
  */
 
-<<<<<<< HEAD
  *,
  *::before,
  *::after, {
@@ -48,7 +47,7 @@ body{
    border-top-style: inset;
    background-color: black;
    text-align: center;
-=======
+
  header{
      position: absolute;
      display: inline;
@@ -66,13 +65,11 @@ body{
    font-size: 90px;
    font-weight: 700;
    background-color: #0088DD;
->>>>>>> 2d0ca8cbfe3ea93f2af4c1cb1f3c02fa1ce75f68
  }
 
  .logo {
      width: 15%;
      float: left;
-<<<<<<< HEAD
      border-right-style: outset;
      margin-left: 10px;
      padding-left: 3%;
@@ -134,7 +131,6 @@ body{
 
  .error_messages{
    color: #af0e0e;
-=======
      border-right-style: solid;
      margin-left: 10px;
  }
@@ -164,5 +160,4 @@ body{
      border-style: outset;
          margin-top: 10%;
      float: left
->>>>>>> 2d0ca8cbfe3ea93f2af4c1cb1f3c02fa1ce75f68
  }
