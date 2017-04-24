@@ -5,7 +5,7 @@
 
 <div>
   <p>Address: <%= @restaurants.address %></p>
-  <p>Hours Of Operation: <%= @restaurants.opening_time.to_s(:time) %> to <%=@restaurants.closing_time.to_s(:time) %></p> 
+  <p>Hours Of Operation: <%= @restaurants.opening_time.to_s(:time) %> to <%=@restaurants.closing_time.to_s(:time) %></p>
   <p>Phone Number: <%= @restaurants.phone_number %></p>
   <p>Description: <%= @restaurants.description %></p>
   <p>Capacity: <%= @restaurants.capacity %></p>
@@ -16,3 +16,4 @@
 <%= link_to "Make A Reservation", new_reservation_url %>
 <%= link_to "All Restaurants", restaurants_url %>
 <%= link_to "Edit Restaurant", edit_restaurant_url(@restaurants) %>
+<%= link_to "Home Page", root_url %>
