@@ -31,12 +31,12 @@ body{
 
  header{
      position: fixed;
-     display: inline;
+    /*display: inline;*/
      width: 100%;
      border-bottom-style: outset;
      height: auto;
      z-index: 1;
-     background-color: red; 
+     background-color: red;
  }
 
  footer{
