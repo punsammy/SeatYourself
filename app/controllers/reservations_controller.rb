@@ -69,7 +69,7 @@ class ReservationsController < ApplicationController
       # These should eventually be instance methods
       set_form_vars
     else
-      flash[:alert] = "Pleas log in or sign up first."
+      flash[:alert] = "Please log in or sign up first."
       redirect_to restaurants_path
     end
   end
