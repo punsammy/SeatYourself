@@ -23,7 +23,11 @@
   </div>
   <div class="field">
     <%= f.label "Password:" %><br>
-    <%= f.password_field :password_digest %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label "Password Confirmation:" %><br>
+    <%= f.password_field :password_confirmation %>
   </div>
   <div class="field">
     <%= f.label "Postal Code:" %><br>
