@@ -7,7 +7,7 @@ class ReservationsController < ApplicationController
     else
       # redirect_to either restaurants or users homepage.
       flash.now[:alert] = "Please Log in!"
-      redicrect_to restaurants_path
+      redirect_to restaurants_path
     end
   end
 
