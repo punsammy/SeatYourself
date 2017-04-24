@@ -2,8 +2,13 @@
 <p>Find me in app/views/restaurants/index.html.erb</p>
 
  -->
+<<<<<<< HEAD
 
  <h1><div class="all_restaurants_title"> Restaurants</div></h1>
+=======
+<div class="homepage">
+ <h1>Restaurants</h1>
+>>>>>>> 667136b728c51dac3dac9df6671d032a2ad7c3a1
 
  <% @restaurants.each do |restaurant| %>
    <a class="restaurants-link" href="/restaurants/<%= restaurant.id %>">
@@ -15,6 +20,7 @@
      </div>
    </a>
  <% end %>
+ </div>
 
 
  <%= link_to "New restaurant", new_restaurant_url %>

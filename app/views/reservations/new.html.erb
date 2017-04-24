@@ -1,9 +1,8 @@
 <h1>Make a Reservation</h1>
-<p>Find me in app/views/reservations/new.html.erb</p>
+<!-- <p>Find me in app/views/reservations/new.html.erb</p> -->
 
-<% if flash[:alert] %>
-  <p><%= flash[:alert] %></p>
-  <p>You have the following errors:</p>
+<% if @reservation.errors.any? %>
+  <p>I'm sorry. We can't make your reservation because:</p>
   <ul class="errors">
     <% @reservation.errors.full_messages.each do |message| %>
       <li><%= message %></li>

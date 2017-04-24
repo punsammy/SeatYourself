@@ -1,7 +1,6 @@
 class ReservationsController < ApplicationController
 
   def index
-    aslfkjh
     @user = current_user
     if @user
       render :index# Only the user who made the reservation can view it.
@@ -33,26 +32,37 @@ class ReservationsController < ApplicationController
     else
       # redirect_to either restaurants or users homepage.
       flash.now[:alert] = "#{@reservation.user}"
-      redicrect_to restaurants_path
+      redirect_to restaurants_path
     end
   end
 
   def new
-    @reservation = Reservation.new
-    # These should eventually be instance methods
-    set_form_vars
+    if current_user
+      @reservation = Reservation.new
+      @reservation.user = current_user
+      # These should eventually be instance methods
+      set_form_vars
+    else
+      flash[:alert] = "Pleas log in or sign up first."
+      redirect_to restaurants_path
+    end
   end
 
   def create
-    @reservation = Reservation.new(reservation_params)
-    # @reservation.user = current_user
-    if @reservation.save
-      flash[:notice] = "Thank you for making a reservation!"
-      redirect_to reservation_path(@reservation)
+    if current_user
+      @reservation = Reservation.new(reservation_params)
+      @reservation.user = current_user
+      if @reservation.save
+        flash[:notice] = "Thank you for making a reservation!"
+        redirect_to reservation_path(@reservation)
+      else
+        # flash.now[:alert] = "Sorry, we cannot make that reservation."
+        set_form_vars
+        render :new
+      end
     else
-      flash.now[:alert] = "Sorry, we cannot make that reservation."
-      set_form_vars
-      render :new
+      flash.now[:alert] = 'Please log in first.'
+      redirect_to restaurants_path
     end
   end
 
