@@ -8,11 +8,12 @@
   <table>
     <% @user.reservations.order(:time).each do |reservation| %>
     <tr>
-      <th>Restaurant:</th><th>Time</th><th>Party size</th>
+      <th>Restaurant:</th><th>Time</th><th>Party size</th><th></th>
     </tr>
       <td><%= reservation.restaurant %></td>
       <td><%= reservation.time %></td>
       <td><%= reservation.party_size %></td>
+      <td><%= link_to "Cancel Reservation", reservation, method: :delete %></td>
     </tr>
     <% end %>
   </table>
