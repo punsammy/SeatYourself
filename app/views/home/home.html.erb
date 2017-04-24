@@ -1,0 +1,10 @@
+<h1>SeatYourself</h1>
+
+<Label>Postal Code</Label><input type="text" title="Postal code"/>
+
+<h2>Weekly Specials</h2>
+
+<% @restaurants.each do |restaurant| %>
+  <p><%= restaurant.name %>, <%= restaurant.description %></p>
+  <%= link_to "/restaurants/#{restaurant.id}" %>
+<% end %>
