@@ -16,7 +16,7 @@
     <th>Party size</th><td><%= @reservation.party_size %></td>
   </tr><tr>
     <th></th><th><%= link_to "| Edit |", edit_reservation_path(@reservation) %>
-      |
+
     <%= link_to " Cancel|", @reservation, method: :delete %></th>
   </tr>
 </table>
