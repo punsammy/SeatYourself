@@ -18,7 +18,7 @@
  *::after, {
    box-sizing: border-box;
  }*/
-.create,h1,h2 {
+.create,h3 {
   margin: 0%;
 }
 body{
@@ -129,7 +129,7 @@ a:active*/
     position: relative;
     right: auto;
     left: 15%;
-    margin-top: 7%;
+    margin-top: 16%;
     text-align: center;
     font-size: 0.8em;
     background-color: rgba(0, 0, 1, 0.6);
@@ -143,7 +143,7 @@ a:active*/
    position: relative;
    right: auto;
    left: 15%;
-   margin-top: 15%;
+   margin-top: 16%;
    text-align: center;
    background-color: rgba(0, 0, 1, 0.6);
  }
@@ -152,6 +152,9 @@ a:active*/
    color: #af0e0e;
  }
 
+.bar{
+  background-color: white;
+}
 
  .all-restaurants{
    font-family: 'Paytone One', sans-serif;
@@ -172,16 +175,8 @@ a:active*/
   position: fixed;
   display: block;
   z-index: -1;
-  height: 60%;
-  margin-top: 12%;
-}
-
-.home_image{
-  width: 100%;
-  z-index: -1:
-  position: fixed;
-  top: 50%;
-  bottom: 50%;
+  height: 61%;
+  margin-top: 16%;
 }
 
 .make_reservation{
@@ -199,13 +194,18 @@ a:active*/
   border-style: outset;
   position: absolute;
   left: 15%;
-  margin-top: 7%;
+  margin-top: 10%;
   margin-bottom: 10%;
   color: white;
   background-color: rgba(0, 0, 1, 0.6);
-  top: 10%;
+  top: 9%;
 }
 
 a:hover{
   color: #a52a2a;
+}
+
+p#notice{
+  margin: 0;
+  font-size: 16px;
 }

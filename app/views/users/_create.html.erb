@@ -1,5 +1,5 @@
-<h1>Welcome to Bitemaker!</h1>
-<h2>Please create your Profile.</h2>
+<h3>Welcome to Bitemaker!</h3>
+<h3>Please create your Profile.</h3>
 <%= form_for(@user) do |f|%>
 <% if @user.errors.any? %>
   <div class="error_messages">
@@ -35,8 +35,6 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-  <br>
-
   <%= link_to "| Already have an account? Please Log In Instead |", sessions_path, method: :post %>
 
 <% end %>
