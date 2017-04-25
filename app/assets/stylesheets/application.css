@@ -168,6 +168,15 @@ body{
   bottom: 50%;
 }
 
+.make_reservation{
+  width: 25%;
+  display: inline-block;
+  border-style: outset;
+  float: left;
+  position: relative;
+  padding: 0;
+}
+
 .home-text{
   padding: 2%;
   width: 70%;
