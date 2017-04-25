@@ -8,7 +8,7 @@ user is <%= @reservation.user %>
   <tr>
     <th>Restaurant</th><td><%= @restaurant.name %></td>
   </tr><tr>
-    <th>Time</th><td><%= @reservation.local_time.strftime("%H:%m") %></td>
+    <th>Time</th><td><%= @reservation.local_time.strftime("%H:%M") %></td>
   </tr><tr>
     <th>Date</th><td><%= @reservation.local_time.strftime("%h. %d, %Y") %></td>
   </tr><tr>
@@ -17,4 +17,4 @@ user is <%= @reservation.user %>
 
 </table>
 
-<%= link_to "Cancel Reservation", @reservation, method: :delete %>
+<%= link_to "Cancel", @reservation, method: :delete %>

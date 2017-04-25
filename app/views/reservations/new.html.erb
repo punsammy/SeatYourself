@@ -1,35 +1,39 @@
-<h1>Make a Reservation</h1>
-<!-- <p>Find me in app/views/reservations/new.html.erb</p> -->
-<div class="homepage">
-<% if @reservation.errors.any? %>
-  <p>I'm sorry. We can't make your reservation because:</p>
-  <ul class="errors">
-    <% @reservation.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+<div class="new-reserve">
+  <span><%=image_tag("Make-an-online-Reservation.jpg", alt: "Make-an-online-Reservation.jpg", class: "make_reservation")%></span>
 
-<%= form_for @reservation do |reservation| %>
-
-  <%= reservation.label :restaurant_id %>
-  <%= reservation.select :restaurant_id do  %>
-    <% @restaurant_list.each do |name, id| -%>
-      <%= content_tag(:option, name, value: id) %>
-    <% end %>
+  <!-- <p>Find me in app/views/reservations/new.html.erb</p> -->
+  <div class="homepage">
+  <% if @reservation.errors.any? %>
+    <p>I'm sorry. We can't make your reservation because:</p>
+    <ul class="errors">
+      <% @reservation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
   <% end %>
 
-  <%= reservation.label :party_size %>
-  <%= reservation.number_field :party_size %>
-  <br>
-  <%= reservation.label :time %>
-  <%= reservation.datetime_select :time, discard_minute: true,
-                                         start_hour: @min_hour,
-                                         end_hour: @max_hour,
-                                         ampm: true,
-                                         default: @earliest %>
+  <%= form_for @reservation do |reservation| %>
 
-  <%= submit_tag "Make Reservation" %>
+    <%= reservation.label :restaurant_id %>
+    <%= reservation.select :restaurant_id do  %>
+      <% @restaurant_list.each do |name, id| -%>
+        <%= content_tag(:option, name, value: id) %>
+      <% end %>
+    <% end %>
 
-<% end %>
+    <%= reservation.label :party_size %>
+    <%= reservation.number_field :party_size %>
+    <br>
+    <%= reservation.label :time %>
+    <%= reservation.datetime_select :time, discard_minute: true,
+                                           start_hour: @min_hour,
+                                           end_hour: @max_hour,
+                                           ampm: true,
+                                           default: @earliest %>
+
+    <%= submit_tag "Make Reservation" %>
+
+  <% end %>
+  </div>
+
 </div>
