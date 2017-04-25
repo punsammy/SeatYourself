@@ -17,14 +17,16 @@
       <td><%= reservation.local_time.strftime("%h. %d, %Y") %></td>
       <td><%= reservation.local_time.strftime("%H:%M") %></td>
       <td><%= reservation.party_size %></td>
-      <th><%= link_to "|Edit|", edit_reservation_path(reservation) %>
 
-      <%= link_to "|Cancel|", reservation, method: :delete %></th>
+      <th><%= link_to "| Edit |", edit_reservation_path(reservation) %>
+
+      <%= link_to " Cancel |", reservation, method: :delete %></th>
+
     </tr>
     <% end %>
   </table>
 
 <% end %>
 
-<p><%= link_to "|Make a reservation|", new_reservation_path %></p>
+<%= link_to "| Make a reservation |", new_reservation_path %>
 </main>
