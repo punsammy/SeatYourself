@@ -3,26 +3,28 @@
 
  -->
 
+<div class="restaurant_index">
 
- <span><%=image_tag("restaurant-08-flagshipphoto.jpg", alt: "restaurant-08-flagshipphoto.jpg", class: "img_header")%></span>
+  <span><%=image_tag("restaurant-08-flagshipphoto.jpg", alt: "restaurant-08-flagshipphoto.jpg", class: "img_header")%></span>
 
-<div class="homepage">
- <h1>Restaurants</h1>
+  <div class="homepage">
+   <h1>Restaurants</h1>
 
 
 
- <% @restaurants.each do |restaurant| %>
-   <a class="restaurants-link" href="/restaurants/<%= restaurant.id %>">
-     <div class="all-restaurants">
-       <h2><%= restaurant.name %></h1>
-       <p><%= restaurant.address %></p>
-       <%= (restaurant.opening_time).to_s(:time) %> to <%= (restaurant.closing_time).to_s(:time) %></p>
-       <p><%= restaurant.description %></p>
-     </div>
-   </a>
- <% end %>
+   <% @restaurants.each do |restaurant| %>
+     <a class="restaurants-link" href="/restaurants/<%= restaurant.id %>">
+       <div class="all-restaurants">
+         <h2><%= restaurant.name %></h1>
+         <p><%= restaurant.address %></p>
+         <%= (restaurant.opening_time).to_s(:time) %> to <%= (restaurant.closing_time).to_s(:time) %></p>
+         <p><%= restaurant.description %></p>
+       </div>
+     </a>
+   <% end %>
 
- <%= link_to "New Restaurant", new_restaurant_url(@restaurants) %>
- <%= link_to "Home Page", root_url %>
- 
- </div>
+   <%= link_to "New Restaurant", new_restaurant_url(@restaurants) %>
+   <%= link_to "Home Page", root_url %>
+
+   </div>
+</div>
