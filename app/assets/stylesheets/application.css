@@ -150,6 +150,7 @@ body{
    right: auto;
    left: 15%;
    margin-top: 7%;
+   margin-bottom: 7%;
  }
 
 .img_header{
@@ -170,9 +171,7 @@ body{
 .home-text{
   padding: 2%;
   width: 70%;
-  display: inline-block;
   border-style: outset;
-  float: left;
   position: fixed;
   right: auto;
   left: 15%;

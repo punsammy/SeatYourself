@@ -7,6 +7,7 @@
   <%= render 'form' %>
 
   <%= link_to "Delete Restaurant", @restaurants, method: :delete %>
+  <%= link_to "Add New Restaurants", new_restaurant_url %>
   <%= link_to "All Restaurants", restaurants_url %>
   <%= link_to "Back to Restaurant", restaurant_url(@restaurants) %>
   <%= link_to "Home Page", root_url %>
