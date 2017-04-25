@@ -9,14 +9,15 @@
   <table class="homepage">
     <% @user.reservations.order(:time).each do |reservation| %>
     <tr>
-      <th>Restaurant:</th><th>Date</th><th>Time</th><th>Party size</th><th></th><th></th>
+      <th>Restaurant:</th><th>Date</th><th>Time</th><th>Party size</th><th></th>
     </tr>
       <td><%= reservation.restaurant.name %></td>
-      <td><%= reservation.local_time..strftime("%D") %></td>
-      <td><%= reservation.local_time..strftime("%H:%m") %></td>
+      <td><%= reservation.local_time.strftime("%h. %d, %Y") %></td>
+      <td><%= reservation.local_time.strftime("%H:%m") %></td>
       <td><%= reservation.party_size %></td>
-      <td><%= link_to "Edit Reservation", edit_reservation_path(reservation) %></td>
-      <td><%= link_to "Cancel Reservation", reservation, method: :delete %></td>
+      <td><%= link_to "Edit", edit_reservation_path(reservation) %>
+        |
+      <%= link_to "Cancel", reservation, method: :delete %></td>
     </tr>
     <% end %>
   </table>
