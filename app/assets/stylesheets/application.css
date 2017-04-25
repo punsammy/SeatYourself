@@ -105,6 +105,11 @@ a:active*/
     padding-top: 0.5%;
 }
 
+  .userinfolinks:hover{
+    color: black
+
+  }
+
 
  .homepage{
    padding: 2%;
@@ -113,14 +118,12 @@ a:active*/
    border-style: outset;
    float: left;
    position: relative;
-   right: auto;
-   left: 15%;
+   left: 13%;
    margin-top: 7%;
    margin-bottom: 10%;
    color: white;
    background-color: rgba(0, 0, 1, 0.6);
  }
-
 
  .create {
     width: 70%;
@@ -163,9 +166,11 @@ a:active*/
    float: left;
    position: relative;
    right: auto;
-   left: 15%;
+   left: 13%;
    margin-top: 7%;
    margin-bottom: 7%;
+   padding: 3%;
+   background-color: rgba(0, 0, 1, 0.3);
  }
 
 .img_header{
