@@ -27,7 +27,18 @@ body{
   font-size: 1em;
   background-color: #FFFFFF;
   width: 100%;
+  color: white;
 }
+
+a:link {
+  color: white;
+  text-decoration: none;
+}
+a:visited {
+  color: wheat;
+}
+/*a:hover - a link when the user mouses over it
+a:active*/
 
  header{
      position: fixed;
@@ -120,6 +131,7 @@ body{
     margin-top: 7%;
     text-align: center;
     font-size: 0.8em;
+    background-color: rgba(0, 0, 1, 0.6);
  }
 
  .sign_in{
@@ -132,6 +144,7 @@ body{
    left: 15%;
    margin-top: 15%;
    text-align: center;
+   background-color: rgba(0, 0, 1, 0.6);
  }
 
  .error_messages{
@@ -158,6 +171,8 @@ body{
   position: fixed;
   display: block;
   z-index: -1;
+  height: 60%;
+  margin-top: 12%;
 }
 
 .home_image{

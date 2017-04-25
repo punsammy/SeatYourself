@@ -1,3 +1,7 @@
+<span>
+  <%= image_tag "restaurant.jpg", class: "img_header" %>
+</span>
+
 <div class="sign_in">
   <h1>Please Sign In!</h1>
       <% if flash[:notice] %>
@@ -6,7 +10,6 @@
       <% if flash[:alert] %>
         <p id="alert"><%= flash[:alert] %></p>
       <% end %>
-
   <%= form_tag sessions_path do %>
 
   <div class="field">
