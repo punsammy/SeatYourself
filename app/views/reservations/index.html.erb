@@ -17,11 +17,11 @@
       <td><%= reservation.party_size %></td>
       <td><%= link_to "Edit", edit_reservation_path(reservation) %>
         |
-      <%= link_to "Cancel", reservation, method: :delete %></td>
+      <%= link_to "| Cancel |", reservation, method: :delete %></td>
     </tr>
     <% end %>
   </table>
 
 <% end %>
 
-<%= link_to "Make a reservation", new_reservation_path %>
+<%= link_to "| Make a reservation |", new_reservation_path %>
