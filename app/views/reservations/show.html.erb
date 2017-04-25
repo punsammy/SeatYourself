@@ -8,7 +8,9 @@ user is <%= @reservation.user %>
   <tr>
     <th>Restaurant</th><td><%= @restaurant.name %></td>
   </tr><tr>
-    <th>Time</th><td><%= @reservation.time %></td>
+    <th>Time</th><td><%= @reservation.local_time.strftime("%H:%m") %></td>
+  </tr><tr>
+    <th>Date</th><td><%= @reservation.local_time.strftime("%D") %></td>
   </tr><tr>
     <th>Party size</th><td><%= @reservation.party_size %></td>
   </tr>
