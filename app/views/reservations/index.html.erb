@@ -2,11 +2,13 @@
 <!-- <h1>Reservations#index</h1> -->
 <!-- <p>Find me in app/views/reservations/index.html.erb</p> -->
 <!-- <div class="margin_fix"></div> -->
-<% if @user.reservations.size == 0 %>
-  <p> You have no reservations.</p>
-<% else %>
 
-  <table class="homepage">
+<main class="homepage">
+  <% if @user.reservations.size == 0 %>
+    <p> You have no reservations.</p>
+  <% else %>
+  <table>
+    <h1>Your Reservations</h1>
     <% @user.reservations.order(:time).each do |reservation| %>
     <tr>
       <th>Restaurant:</th><th>Date</th><th>Time</th><th>Party size</th><th></th>
@@ -15,13 +17,16 @@
       <td><%= reservation.local_time.strftime("%h. %d, %Y") %></td>
       <td><%= reservation.local_time.strftime("%H:%M") %></td>
       <td><%= reservation.party_size %></td>
-      <td><%= link_to "Edit", edit_reservation_path(reservation) %>
-        |
-      <%= link_to "Cancel", reservation, method: :delete %></td>
+
+      <th><%= link_to "| Edit |", edit_reservation_path(reservation) %>
+
+      <%= link_to " Cancel |", reservation, method: :delete %></th>
+
     </tr>
     <% end %>
   </table>
 
 <% end %>
 
-<%= link_to "Make a reservation", new_reservation_path %>
+<%= link_to "| Make a reservation |", new_reservation_path %>
+</main>
