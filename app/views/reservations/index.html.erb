@@ -13,7 +13,7 @@
     </tr>
       <td><%= reservation.restaurant.name %></td>
       <td><%= reservation.local_time.strftime("%h. %d, %Y") %></td>
-      <td><%= reservation.local_time.strftime("%H:%m") %></td>
+      <td><%= reservation.local_time.strftime("%H:%M") %></td>
       <td><%= reservation.party_size %></td>
       <td><%= link_to "Edit", edit_reservation_path(reservation) %>
         |
