@@ -189,11 +189,18 @@ a:active*/
   top: 50%;
   bottom: 50%;
 }
+.make_reservation > img{
+  width: 25%;
+  margin: auto;
+  margin-top: 10%;
+  border-style: outset;
+}
 
 .make_reservation{
-  width: 25%;
+  width: 100%;
   display: inline-block;
-  border-style: outset;
+/*  border-style: outset; */
+  text-align: center;
   float: left;
   position: relative;
   padding: 0;
