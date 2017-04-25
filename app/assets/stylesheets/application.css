@@ -142,6 +142,7 @@ body{
  .all-restaurants{
    font-family: 'Paytone One', sans-serif;
    width: 70%;
+   color: white;
    display: inline-block;
    border-style: outset;
    float: left;
@@ -150,3 +151,34 @@ body{
    left: 15%;
    margin-top: 7%;
  }
+
+.img_header{
+  width: 100%;
+  position: fixed;
+  display: block;
+  z-index: -1;
+}
+
+.home_image{
+  width: 100%;
+  z-index: -1:
+  position: fixed;
+  top: 50%;
+  bottom: 50%;
+}
+
+.home-text{
+  padding: 2%;
+  width: 70%;
+  display: inline-block;
+  border-style: outset;
+  float: left;
+  position: fixed;
+  right: auto;
+  left: 15%;
+  margin-top: 7%;
+  margin-bottom: 10%;
+  color: white;
+  background-color: rgba(0, 0, 1, 0.6);
+  top: 10%;
+}
