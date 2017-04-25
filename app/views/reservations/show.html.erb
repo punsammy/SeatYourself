@@ -1,20 +1,24 @@
 <h1>Reservations#show</h1>
 
-<% if flash[:success] %>
-  <p class="success"><%= flash[:success] %></p>
-<% end %>
-user is <%= @reservation.user %>
-<table class="homepage">
+
+<!-- user is <%# @reservation.user %> -->
+<main class="homepage">
+  <% if flash[:success] %>
+    <p class="success"><%= flash[:success] %></p>
+  <% end %>
+  <h1>Reservation at <%= @restaurant.name %></h1>
+<table>
   <tr>
-    <th>Restaurant</th><td><%= @restaurant.name %></td>
-  </tr><tr>
     <th>Time</th><td><%= @reservation.local_time.strftime("%H:%M") %></td>
   </tr><tr>
     <th>Date</th><td><%= @reservation.local_time.strftime("%h. %d, %Y") %></td>
   </tr><tr>
     <th>Party size</th><td><%= @reservation.party_size %></td>
+  </tr><tr>
+    <th></th><th><%= link_to "|Edit|", edit_reservation_path(@reservation) %>
+      |
+    <%= link_to "|Cancel|", @reservation, method: :delete %></th>
   </tr>
-
 </table>
 
-<%= link_to "Cancel", @reservation, method: :delete %>
+</main>
